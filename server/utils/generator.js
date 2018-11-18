@@ -1,8 +1,7 @@
-const generator = (from, text) => {
+const generator = (from, para) => {
   return {
     from,
-    text,
-    createdAt: new Date().getTime()
+    para
   }
 }
 

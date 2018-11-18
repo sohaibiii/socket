@@ -3,12 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <title>MY App</title>
   </head>
 
   <body>
-    <h1>Welcome to my App</h1>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container text-center">
+        <h1 class="display-4 ">Welcome to My App</h1>
+      </div>
+    </div>
+    <form id="myform">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Text Message</label>
+        <input
+          type="text"
+          class="form-control col-sm-4 "
+          placeholder="Enter Message"
+        />
+      </div>
 
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p></p>
+    <p></p>
+
+    <ul class="list-group" id="myui">
+      <li class="list-group-item list-group-item-primary">ALL Messages</li>
+    </ul>
+
+    <script src="libs/jquery-3.3.1.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/index.js"></script>
   </body>
