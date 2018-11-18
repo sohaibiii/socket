@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const http = require('http')
 const socketIO = require('socket.io')
-const { generator } = require('./utils/generator')
+const { generator, generatorlocation } = require('./utils/generator')
 var port = process.env.PORT || 3000
 
 const app = express()
@@ -34,6 +34,12 @@ io.on('connection', socket => {
     //   from: msg.from,
     //   para: msg.para
     // })
+  })
+  socket.on('gettinglocation', loc => {
+    io.emit(
+      'alluserslocation',
+      generatorlocation('admin', loc.latitude, loc.longitude)
+    )
   })
 
   socket.emit('allusers', generator('admin', 'Welcome new user'))
