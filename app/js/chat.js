@@ -22,6 +22,7 @@ socket.on('updateuserlist', function (list) {
         'list-group-item list-group-item-secondary'
       )
     )
+    ul.append('<p></p>')
   })
   $('#users').html(ul)
 })
@@ -47,7 +48,7 @@ socket.on('alluserslocation', function (location) {
   var li = $('<li></li>')
 
   var a = $(
-    `<a target="_blank">Current location of ${location.from} is  ${timeof}</a>`
+    `<a target="_blank">Current location of ${location.from} at  ${timeof}</a>`
   )
   a.attr('href', location.url)
   li.append(a)
